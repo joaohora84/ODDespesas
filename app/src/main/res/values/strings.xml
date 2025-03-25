@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ODDespesas</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_despesa">Despesa</string>
+    <string name="menu_receita">Receita</string>
+    <string name="nova_despesa">Nova Despesa</string>
+    <string name="descricao">Descrição</string>
+    <string name="valor_real">Valor (R$)</string>
+    <string name="data">Data</string>
+    <string name="categoria">Categoria</string>
+    <string name="selecione_a_categoria_da_despesa">Selecione a categoria da despesa</string>
+    <string name="botao_limpar">Limpar</string>
+    <string name="limpar_todos_os_campos">Limpar todos os campos</string>
+    <string name="botao_salvar">Salvar</string>
+    <string name="salvar_esta_despesa">Salvar esta despesa</string>
+    <string name="nova_receita">Nova Receita</string>
+    <string name="despesas">Despesas</string>
+    <string name="resumo_financeiro">Resumo Financeiro</string>
+    <string name="receitas">Receitas</string>
+    <string name="saldo">Saldo</string>
+    <string name="despesas_por_categoria">Despesas por Categoria</string>
+</resources>

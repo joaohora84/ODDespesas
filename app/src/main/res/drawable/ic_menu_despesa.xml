@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+
+    <!-- Seta para baixo -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M7,3H17V8C17,9.1 16.1,10 15,10H9C7.9,10 7,9.1 7,8V3Z" />
+
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,18.5C14.21,18.5 16,16.71 16,14.5C16,12.29 14.21,10.5 12,10.5C9.79,10.5 8,12.29 8,14.5C8,16.71 9.79,18.5 12,18.5Z" />
+
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M7,8L12,14L17,8" />
+
+    <!-- Símbolo de dólar -->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M12,12.8C11.44,12.8 11,13.24 11,13.8C11,14.36 11.44,14.8 12,14.8C12.56,14.8 13,14.36 13,13.8C13,13.24 12.56,12.8 12,12.8Z" />
+
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M12,11.7C12.3,11.7 12.6,11.8 12.82,11.94C13.05,12.08 13.2,12.3 13.22,12.53C13.25,12.78 13.12,13.05 12.88,13.2C12.64,13.35 12.32,13.4 12,13.4V13.8C12,14.07 11.78,14.3 11.5,14.3C11.22,14.3 11,14.07 11,13.8V13.4C10.68,13.4 10.36,13.35 10.12,13.2C9.88,13.05 9.75,12.78 9.78,12.53C9.8,12.3 9.95,12.08 10.18,11.94C10.4,11.8 10.7,11.7 11,11.7H12Z" />
+
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M12,16.5C11.7,16.5 11.4,16.4 11.18,16.26C10.95,16.12 10.8,15.9 10.78,15.67C10.75,15.42 10.88,15.15 11.12,15C11.36,14.85 11.68,14.8 12,14.8V14.4C12,14.13 12.22,13.9 12.5,13.9C12.78,13.9 13,14.13 13,14.4V14.8C13.32,14.8 13.64,14.85 13.88,15C14.12,15.15 14.25,15.42 14.22,15.67C14.2,15.9 14.05,16.12 13.82,16.26C13.6,16.4 13.3,16.5 13,16.5H12Z" />
+
+    <!-- Pilha de dinheiro -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M16,14.5H19C20.1,14.5 21,15.4 21,16.5V17C21,17.55 20.55,18 20,18H16V14.5Z" />
+
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M16,18H20C20.55,18 21,18.45 21,19V19.5C21,20.6 20.1,21.5 19,21.5H16V18Z" />
+</vector>

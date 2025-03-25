@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_despesa"
+            android:icon="@drawable/ic_menu_despesa"
+            android:title="@string/menu_despesa" />
+        <item
+            android:id="@+id/nav_receita"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_receita" />
+    </group>
+</menu>
