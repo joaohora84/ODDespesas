@@ -2,6 +2,7 @@ package com.odsoftware.oddespesas.model;
 
 public class Receita {
 
+    private Integer id;
     private String descricao;
     private double valor;
     private String data;

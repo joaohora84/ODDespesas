@@ -2,10 +2,12 @@ package com.odsoftware.oddespesas.model;
 
 public class Despesa {
 
+    private Integer id;
     private String descricao;
     private double valor;
     private String data;
     private String categoria;
+
 
     public Despesa(String descricao, double valor, String data, String categoria) {
         this.descricao = descricao;

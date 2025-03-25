@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.odsoftware.oddespesas.controller.DespesaController;
 import com.odsoftware.oddespesas.databinding.FragmentDespesaBinding;
 
 import java.text.SimpleDateFormat;
@@ -28,6 +29,8 @@ import java.util.Locale;
 public class DespesaFragment extends Fragment {
 
     private FragmentDespesaBinding binding;
+
+    private DespesaController despesaController;
 
     private TextInputLayout descricaoLayout;
     private TextInputLayout valorLayout;
@@ -45,6 +48,7 @@ public class DespesaFragment extends Fragment {
     private Calendar calendar;
     private SimpleDateFormat dateFormat;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -52,6 +56,8 @@ public class DespesaFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         binding = FragmentDespesaBinding.inflate(inflater, container, false);
+
+        despesaController = new DespesaController(requireContext());
 
         return binding.getRoot();
 
@@ -233,25 +239,31 @@ public class DespesaFragment extends Fragment {
     }
 
     private void salvarDespesa() {
-        // Aqui você implementaria a lógica para salvar a despesa
-        // Exemplo: criar um objeto Despesa e salvar no banco de dados
 
-        // Obter os valores dos campos
         String descricao = descricaoEdit.getText() != null ? descricaoEdit.getText().toString().trim() : "";
         double valor = 0;
         try {
             valor = Double.parseDouble(valorEdit.getText().toString().replace(",", "."));
         } catch (NumberFormatException e) {
-            // Não deve ocorrer devido à validação prévia
+            System.out.println("Erro" + e.getMessage());
         }
         String data = dataEdit.getText() != null ? dataEdit.getText().toString() : "";
         String categoria = categoriaSpinner.getText() != null ? categoriaSpinner.getText().toString() : "";
 
-        // Mensagem de sucesso (temporária)
-        Toast.makeText(requireContext(), "Despesa salva com sucesso!", Toast.LENGTH_SHORT).show();
+        boolean retorno = despesaController.salvarDespesa(
+                descricao,
+                valor,
+                data,
+                categoria
+        );
 
-        // Limpar campos após salvar
-        limparCampos();
+        if(retorno){
+            Toast.makeText(requireContext(), "Despesa salva com sucesso!", Toast.LENGTH_SHORT).show();
+            limparCampos();
+        }else{
+            Toast.makeText(requireContext(), "Erro ao salvar despesa!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
