@@ -241,13 +241,16 @@ public class DespesaFragment extends Fragment {
     private void salvarDespesa() {
 
         String descricao = descricaoEdit.getText() != null ? descricaoEdit.getText().toString().trim() : "";
+
         double valor = 0;
         try {
             valor = Double.parseDouble(valorEdit.getText().toString().replace(",", "."));
         } catch (NumberFormatException e) {
             System.out.println("Erro" + e.getMessage());
         }
+
         String data = dataEdit.getText() != null ? dataEdit.getText().toString() : "";
+
         String categoria = categoriaSpinner.getText() != null ? categoriaSpinner.getText().toString() : "";
 
         boolean retorno = despesaController.salvarDespesa(
