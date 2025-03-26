@@ -3,6 +3,7 @@ package com.odsoftware.oddespesas.ui.receita;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.odsoftware.oddespesas.controller.ReceitaController;
 import com.odsoftware.oddespesas.databinding.FragmentReceitaBinding;
 
 import java.text.SimpleDateFormat;
@@ -30,6 +32,7 @@ public class ReceitaFragment extends Fragment {
 
     private FragmentReceitaBinding binding;
 
+    private ReceitaController receitaController;
     private TextInputLayout descricaoLayout;
     private TextInputLayout valorLayout;
     private TextInputLayout dataLayout;
@@ -51,6 +54,9 @@ public class ReceitaFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentReceitaBinding.inflate(inflater, container, false);
+
+        receitaController = new ReceitaController(requireContext());
+
         return binding.getRoot();
     }
 
@@ -227,25 +233,42 @@ public class ReceitaFragment extends Fragment {
     }
 
     private void salvarReceita() {
-        // Aqui você implementaria a lógica para salvar a receita
-        // Exemplo: criar um objeto Receita e salvar no banco de dados
+
 
         // Obter os valores dos campos
         String descricao = descricaoEdit.getText() != null ? descricaoEdit.getText().toString().trim() : "";
+
         double valor = 0;
         try {
             valor = Double.parseDouble(valorEdit.getText().toString().replace(",", "."));
         } catch (NumberFormatException e) {
             // Não deve ocorrer devido à validação prévia
         }
+
         String data = dataEdit.getText() != null ? dataEdit.getText().toString() : "";
+
         String categoria = categoriaSpinner.getText() != null ? categoriaSpinner.getText().toString() : "";
 
-        // Mensagem de sucesso (temporária)
-        Toast.makeText(requireContext(), "Receita salva com sucesso!", Toast.LENGTH_SHORT).show();
+        try {
+            boolean retorno = receitaController.salvarReceita(
+                    descricao,
+                    valor,
+                    data,
+                    categoria
+            );
 
-        // Limpar campos após salvar
-        limparCampos();
+            if(retorno){
+                Toast.makeText(requireContext(), "Receita salva com sucesso!", Toast.LENGTH_SHORT).show();
+                limparCampos();
+            }else{
+                Toast.makeText(requireContext(), "Erro al salvar Receita!", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.e("Erro Receita: ", e.getMessage().toString());
+        }
+
+
+
     }
 
     @Override
